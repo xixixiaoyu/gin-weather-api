@@ -321,6 +321,24 @@ docker build -t gin-weather .
 docker run -p 8080:8080 -e WEATHER_API_KEY=your_api_key gin-weather
 ```
 
+### 使用 Docker Compose（推荐）
+
+一键启动前后端服务：
+
+```bash
+docker-compose up -d
+```
+
+这将同时启动：
+- **前端服务**: http://localhost:3000
+- **后端服务**: http://localhost:8080
+
+停止服务：
+
+```bash
+docker-compose down
+```
+
 ## 📚 完整学习文档
 
 我们为您准备了详细的学习文档，建议按以下顺序阅读：
@@ -331,11 +349,14 @@ docker run -p 8080:8080 -e WEATHER_API_KEY=your_api_key gin-weather
 4. **[docs/03-DEVELOPMENT.md](docs/03-DEVELOPMENT.md)** - 💻 开发指南
 5. **[docs/04-API.md](docs/04-API.md)** - 📡 API 接口文档
 6. **[docs/05-DEPLOYMENT.md](docs/05-DEPLOYMENT.md)** - 🚀 部署指南
+7. **[docs/06-USER-GUIDE.md](docs/06-USER-GUIDE.md)** - 👤 用户使用指南
+8. **[docs/07-FRONTEND-TUTORIAL.md](docs/07-FRONTEND-TUTORIAL.md)** - 🎨 前端实现教程
 
 ### 🎯 快速导航
 
 - **初学者** → 从 [01-TUTORIAL.md](docs/01-TUTORIAL.md) 开始
 - **有经验的开发者** → 直接查看 [02-ARCHITECTURE.md](docs/02-ARCHITECTURE.md)
+- **前端开发者** → 查看 [07-FRONTEND-TUTORIAL.md](docs/07-FRONTEND-TUTORIAL.md)
 - **API 使用者** → 查看 [04-API.md](docs/04-API.md)
 - **运维人员** → 查看 [05-DEPLOYMENT.md](docs/05-DEPLOYMENT.md)
 

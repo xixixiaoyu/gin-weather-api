@@ -12,6 +12,8 @@
 4. **[03-DEVELOPMENT.md](03-DEVELOPMENT.md)** - 💻 开发指南（掌握开发技能）
 5. **[04-API.md](04-API.md)** - 📡 API 接口文档（了解接口规范）
 6. **[05-DEPLOYMENT.md](05-DEPLOYMENT.md)** - 🚀 部署指南（生产环境部署）
+7. **[06-USER-GUIDE.md](06-USER-GUIDE.md)** - 👤 用户使用指南（前端界面使用）
+8. **[07-FRONTEND-TUTORIAL.md](07-FRONTEND-TUTORIAL.md)** - 🎨 前端实现教程（详细前端开发过程）
 
 > 💡 **提示**：如果您是初学者，强烈建议按照编号顺序学习。如果您有经验，可以根据需要跳转到特定文档。
 
@@ -74,6 +76,19 @@
 - 云服务器部署
 - Kubernetes 部署
 - 监控和日志配置
+
+### 7. 用户使用指南 (06-USER-GUIDE.md)
+- 前端界面使用方法
+- 功能操作说明
+- 常见问题解答
+- 使用技巧和建议
+
+### 8. 前端实现教程 (07-FRONTEND-TUTORIAL.md)
+- Vue.js 3 + TypeScript 项目搭建
+- 组件化开发详解
+- 状态管理和 API 集成
+- 样式设计和响应式布局
+- 测试和部署实践
 
 ## 🎯 按角色查看文档
 
