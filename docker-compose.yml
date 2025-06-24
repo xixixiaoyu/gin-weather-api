@@ -1,0 +1,50 @@
+version: '3.8'
+
+services:
+  # 后端服务
+  gin-weather-backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - SERVER_HOST=0.0.0.0
+      - SERVER_PORT=8080
+      - GIN_MODE=release
+      - WEATHER_API_KEY=${WEATHER_API_KEY}
+      - WEATHER_BASE_URL=https://api.openweathermap.org/data/2.5
+      - WEATHER_TIMEOUT=10
+      - WEATHER_PROVIDER=openweathermap
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:8080/api/v1/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - gin-weather-network
+
+  # 前端服务
+  gin-weather-frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    depends_on:
+      - gin-weather-backend
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - gin-weather-network
+
+networks:
+  gin-weather-network:
+    driver: bridge
